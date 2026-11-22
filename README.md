@@ -59,4 +59,3 @@ The Meta-AI, whose job is to catch exactly this kind of mistake, approved all 63
 | [Lab2a_Worksheet.md](Lab2a_Worksheet.md) | The full worksheet: every section and question from the lab guide, answered |
 | `screenshots/` | Pictures from the dashboard |
 | `evidence/` | The raw data I exported from the system, as proof |
-| [docs/README_HE.md](docs/README_HE.md) | An explanation of this repo in Hebrew |
