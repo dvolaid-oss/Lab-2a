@@ -57,5 +57,5 @@ The Meta-AI, whose job is to catch exactly this kind of mistake, approved all 63
 | File | What's inside |
 |---|---|
 | [Lab2a_Worksheet.md](Lab2a_Worksheet.md) | The full worksheet: every section and question from the lab guide, answered |
-| `screenshots/` | Pictures from the dashboard |
+| `screenshots/` | Pictures from the dashboard and from Redpanda Console |
 | `evidence/` | The raw data I exported from the system, as proof |

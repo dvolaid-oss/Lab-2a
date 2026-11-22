@@ -79,6 +79,29 @@ For both, the same alert_id appeared in All Cases, Active Alert, Human Decision 
 
 The full topic dumps are in [evidence/](evidence/).
 
+**Redpanda Console screenshots (http://localhost:8080).** During the live run I traced the topics with `rpk` from the command line. To get Console screenshots afterwards, I started Redpanda again and loaded the exact recorded messages from `evidence/` back into the same 7 topics. The offsets and content are identical to the original run; only the Console's message timestamp shows the reload time (the original time is in each event's `timestamp` field).
+
+All 7 topics:
+![Console topics](screenshots/04_console_topics.jpg)
+
+raw.logs, offset 17 (the original event; no alert_id yet):
+![raw.logs](screenshots/05_console_raw_logs.jpg)
+
+morpheus.alerts, alert-0-17 (risk 100, Isolation Forest -1, fingerprint z 348):
+![morpheus.alerts](screenshots/06_console_alert.jpg)
+
+agent.explanations (XAI, provider deterministic):
+![agent.explanations](screenshots/07_console_xai.jpg)
+
+audit.rai (isolation needs human approval):
+![audit.rai](screenshots/08_console_rai.jpg)
+
+agent.meta_ai (approve, no issues, uncertainty 0):
+![agent.meta_ai](screenshots/09_console_meta_ai.jpg)
+
+human.decisions, offset 0 (my escalate decision for alert-0-17):
+![human.decisions](screenshots/10_console_human_decision.jpg)
+
 **Q: Why is alert_id useful for selecting one dashboard case, while correlation_id may be useful for tracing related backend events?**
 alert_id is only created when the detector raises an alert (it's partition + offset, so `alert-0-17`), and the dashboard keys cases on it. correlation_id is created together with the raw event, so it already exists in raw.logs before there is any alert. It then follows the event into the alert, the investigation and the decision. With correlation_id I can go back to the original telemetry. With alert_id I can't, because raw.logs doesn't have it.
 
