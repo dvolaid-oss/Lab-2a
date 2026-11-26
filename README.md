@@ -26,7 +26,7 @@ fake activity -> detector -> AI helpers -> dashboard -> me (the human decides)
 
 All messages between the parts go through a message system called Kafka (Redpanda), and every decision is saved in a log file (the audit trail).
 
-## What I did
+## What We did
 
 1. Installed and started the system. The tests passed (5 out of 5).
 2. Let it run for about a minute. It created **63 alerts**.
@@ -34,7 +34,7 @@ All messages between the parts go through a message system called Kafka (Redpand
 4. Recorded my decision for each one in the dashboard.
 5. Checked that my decisions were really saved.
 
-## What I decided
+## What We decided
 
 **Case 1, alert-0-17 (risk 100). My decision: escalate (pass it up to a manager)**
 Someone tried to log in to the backup account 23 times from an IP in Iran, and 48 MB of data left the database server. That looks like a real attack. But all the evidence comes from **one single log line**, and cutting off a database server is a big step. A decision like that should not be made by one analyst alone.
@@ -42,7 +42,7 @@ Someone tried to log in to the backup account 23 times from an IP in Iran, and 4
 **Case 2, alert-0-0 (risk 80). My decision: reject (false alarm)**
 A completely normal file access from inside the company. The AI flagged it only because of the time of day.
 
-## The most interesting thing I found
+## The most interesting thing We found
 
 **Every single event became an alert, 63 out of 63, even the normal ones.**
 
