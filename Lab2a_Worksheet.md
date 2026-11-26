@@ -219,6 +219,4 @@ MFA/IdP logs showing whether a login finally succeeded, firewall or NetFlow logs
 Human authority should be strongest for actions that break things: isolating servers, disabling accounts (especially service accounts) and blocking production traffic. In my run, an automatic system acting at risk 80 or above would have acted on 57 harmless events because of one stale baseline. An attacker could also fake signals on purpose to make the system shut down its own servers.
 
 
-## Completion checklist
 
-☑ Environment and services verified ☑ Case selected ☑ Identifiers synchronized ☑ Topics traced ☑ Evidence reviewed ☑ XAI/RAI/Meta-AI assessed ☑ Human decision justified and recorded ☑ Audit verified ☑ Q1-Q18 and reflections completed ☑ Submission prepared ☑ Services stopped
