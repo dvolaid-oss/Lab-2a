@@ -218,13 +218,6 @@ MFA/IdP logs showing whether a login finally succeeded, firewall or NetFlow logs
 **Where should human authority be strongest, and what could go wrong with automatic remediation?**
 Human authority should be strongest for actions that break things: isolating servers, disabling accounts (especially service accounts) and blocking production traffic. In my run, an automatic system acting at risk 80 or above would have acted on 57 harmless events because of one stale baseline. An attacker could also fake signals on purpose to make the system shut down its own servers.
 
-## 9. Optional research export
-
-Not done. It's optional and needs consent and instructor approval.
-
-## 10. Shutdown
-
-I stopped all Python services with Ctrl+C and ran `docker compose down`.
 
 ## Completion checklist
 
